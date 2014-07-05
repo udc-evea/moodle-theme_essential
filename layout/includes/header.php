@@ -63,6 +63,9 @@ if (!empty($_SERVER['HTTP_USER_AGENT'])) {
             </a>
             <div class="nav-collapse collapse">
                 <?php echo $OUTPUT->custom_menu(); ?>
+                <ul class="nav">
+					<div class="btn-toolbar" id="bloques"></div>
+                </ul>
                 <ul class="nav pull-right">
                     <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
                     <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>

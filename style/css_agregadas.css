@@ -1,0 +1,89 @@
+/* CSS para el div gris que contiene el logo de la udc, que desaparece cuanod se escrolea hacia abajo */
+#caja-flotante{
+    height: auto;
+    right: 0;
+}
+#barra-fija{
+    top: 0;
+    right: 0;
+}
+#cabecera{
+    padding-top: 40px;
+    width: 100%;
+    height: 100%;
+}
+/* estilo para enviar los bloques a la barra de navegacion */
+#bloques {
+    margin: 0px;
+}
+.bloque-insertar {
+    overflow-y: auto;
+    max-height: 350px;
+    min-width: 350px;
+}
+.bloque-insertar .block {
+    border: none;
+}
+.bloque-insertar .block .calendartable {
+    min-height: 120px;
+}
+/* defino el tamaño de la barra de navegacion */
+.navbar-inner {
+    line-height: 15px;
+}
+/* defino estilo del bloque de calendario, se ve en el bloque de Eventos Proximos */
+.calendar-event-panel .yui3-overlay-content h2.eventtitle {
+    font-size: 17px;
+}
+.calendar-event-panel .eventcontent{
+    font-size: 14px;
+}
+/* formateo la barra de rastro con fondo azul, letras bñancas, y fixed a la barra superior */
+.linksRastro{
+    background-color: #30add1;
+    border-bottom-left-radius: 3px; 
+    border-bottom-right-radius: 3px; 
+    margin-top: -21px;
+    display: inline-block;
+    position: fixed;
+}
+.linksRastro a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;    
+}
+.linksRastro span{
+    color: white;    
+}
+/* coloco los navegadores de los temas de los cursos en azul, y con bordes redondeados, y color blanco de texto */
+.section-navigation span{
+    background-color: #30add1;
+    border-radius: 10px; 
+    margin-top: -10px;
+}
+.section-navigation span a{
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+/* redondeo las puntas del footer */
+#page-footer{
+    border-radius: 18px;
+}
+/* defino el color del fondo de los cursos */
+.topics{
+    background-color: #F6F6E8;//gris del fondo de los cursos y demas; gris del fondo de los cursos y demas 
+}
+/* defino que el fondo del course este pegado a la solapa de onetopics */
+.course-content ul.topics {
+    margin-top: -20px;
+}
+/* cambio el color del javascript de "volver arriba" */
+.back-to-top{
+    color: black !important;
+}
+/* defino el fondo del div que muestra el resumen de los cursos en el frontpage */
+.coursebox{
+    background-color: #F6F6E8 !important;
+    //background-position: left .0em !important;
+}
