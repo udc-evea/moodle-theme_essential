@@ -30,6 +30,8 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
+    <!-- Muestro en que pagina estoy -->
+<script>alert('layout embedded')</script>
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <div id="page">
     <div id="page-content" class="clearfix">
