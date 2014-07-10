@@ -266,7 +266,7 @@
     * Written by G J Barnard
     */
     
-    public function edit_button(moodle_url $url) {
+    /*public function edit_button(moodle_url $url) {
         $url->param('sesskey', sesskey());    
         if ($this->page->user_is_editing()) {
             $url->param('edit', 'off');
@@ -281,6 +281,36 @@
         }
         return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' fa fa-fw')).
                html_writer::end_tag('i'), array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
+    }
+     * 
+     */
+    /**
+    * Returns HTML to display a "Turn editing on/off" button in a form.
+    *
+    * @param moodle_url $url The URL + params to send through when clicking the button
+    * @return string HTML the button
+    * Written by G J Bernard
+    */
+    
+    public function edit_button(moodle_url $url) {
+        $url->param('sesskey', sesskey());    
+        if ($this->page->user_is_editing()) {
+            $url->param('edit', 'off');
+            //$btn = 'btn-danger';  //opcion original
+            $btn = 'btn-danger';
+            $title = get_string('turneditingoff');
+            $icon = 'icon-edit';
+            $TextoBoton = " Desactivar Edición ";
+        } else {
+            $url->param('edit', 'on');
+            $btn = 'btn-primary';
+            $title = get_string('turneditingon');
+            $icon = 'icon-edit';            
+            $TextoBoton = " Activar Edición";
+        }
+        //return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon.' icon-white')).$TextoBoton.
+        //       html_writer::end_tag('i'), array('href' => $url, 'class' => 'btn '.$btn, 'title' => $title));
+        return '<a href="'.$url.'" class="btn '.$btn.'" title="'.$title.'"><i class="'.$icon.' icon-white"></i> '.$TextoBoton.' </a>';
     }
     
     /**

@@ -279,7 +279,10 @@ ul.socials {
 }
 
 .open > .dropdown-menu {
-    overflow: visible;
+    display: block;
+    max-height: 500px;
+    overflow-y: auto;
+    /*overflow: visible;*/
 }
 
 .dropdown-menu {

@@ -114,9 +114,9 @@ echo $OUTPUT->doctype() ?>
 </header>
 <br><br><br>
 <!-- Start Main Regions -->
-<div id="page" class="container-fluid" style="border: black solid 1px">
+<div id="page" class="container-fluid">
     <div id="page-content" class="row-fluid">
-        <div id="<?php echo $regionbsid ?>" class="span12" style="border: red solid 1px">
+        <div id="<?php echo $regionbsid ?>" class="span12">
             <div class="row-fluid">
                 <?php if ($hasboringlayout) { ?>
                 <section id="region-main" class="span12 pull-right">

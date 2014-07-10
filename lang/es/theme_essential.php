@@ -79,6 +79,12 @@ $string['perf_max'] = 'Detallado';
 $string['perf_min'] = 'Mínimo';
 $string['visibleadminonly'] = 'Los bloques colocados en esta área serán vistos únicamente por los administradores';
 
+/* Cadenas que faltaban incorporar */
+$string['mydashboard'] = 'Mis Opciones';
+$string['mycourses'] = 'Mis Cursos';
+$string['noenrolments'] = 'No estás inscripto en ningún curso';
+$string['backtotop'] = 'Volver arriba';
+
 /* Navbar Seperator */
 $string['navbarsep'] = 'Separador para barra de navegación';
 $string['navbarsepdesc'] = 'Aquí puede cambiar el tipo de separador que se desplegará en la barra de navegación';
