@@ -87,7 +87,17 @@
     background-color: #F6F6E8 !important;
     //background-position: left .0em !important;
 }
+/* quito estilo del boton de Activar/Desactivar Edicion */
 .breadcrumb-button a{
     text-decoration: none;
     color: white;
+}
+/* expando los identificadores de los formularios */
+.fitemtitle {
+    width: 30% !important;
+}
+.mform{
+    background-color: whitesmoke;
+    padding: 30px;
+    border-radius: 15px;
 }

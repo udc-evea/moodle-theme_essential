@@ -112,9 +112,9 @@ echo $OUTPUT->doctype() ?>
                     </div>
                 </nav>
 </header>
-<br><br><br>
+<br>
 <!-- Start Main Regions -->
-<div id="page" class="container-fluid">
+<div id="page" class="container">
     <div id="page-content" class="row-fluid">
         <div id="<?php echo $regionbsid ?>" class="span12">
             <div class="row-fluid">
@@ -125,7 +125,7 @@ echo $OUTPUT->doctype() ?>
                 <?php } ?>
                     <div id="page-navbar" class="clearfix">
                         <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                        <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+                        <div class="breadcrumb-nav linksRastro"><?php echo $OUTPUT->navbar(); ?></div>
                     </div>
                     <?php
                     echo $OUTPUT->course_content_header();
@@ -142,7 +142,6 @@ echo $OUTPUT->doctype() ?>
         </div>
         <?php echo $OUTPUT->blocks('side-post', 'span3'); ?>
     </div>
-    
     <!-- End Main Regions -->
 
     <footer id="page-footer" class="container-fluid">

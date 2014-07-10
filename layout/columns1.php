@@ -89,14 +89,14 @@ echo $OUTPUT->doctype() ?>
                     </div>
                 </nav>
 </header>
-
+<br>
 <div id="page" class="container-fluid">
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
             <div id="page-navbar" class="clearfix">
                 <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+                <div class="breadcrumb-nav linksRastro"><?php echo $OUTPUT->navbar(); ?></div>
             </div>
             <?php
             echo $OUTPUT->course_content_header();
@@ -114,8 +114,7 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-<!--<link rel="stylesheet" type="text/css" href="<?php //echo $CFG->wwwroot;?>/theme/essential/style/css_agregadas.css" />
-<script src="<?php //echo $CFG->wwwroot."/theme/essential/javascript/bloques.js";?>"></script> -->
+
 <script type="text/javascript">
 jQuery(document).ready(function() {
     var offset = 220;
