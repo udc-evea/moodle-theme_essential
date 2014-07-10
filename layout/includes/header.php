@@ -51,30 +51,30 @@ if (!empty($_SERVER['HTTP_USER_AGENT'])) {
     $checkuseragent = $_SERVER['HTTP_USER_AGENT'];
 }
 ?>
-
+<!--
 <header role="banner" class="navbar">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+            <a class="brand" href="<?php //echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
             <div class="nav-collapse collapse">
-                <?php echo $OUTPUT->custom_menu(); ?>
+                <?php //echo $OUTPUT->custom_menu(); ?>
                 <ul class="nav">
 					<div class="btn-toolbar" id="bloques"></div>
                 </ul>
                 <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
-                    <li class="navbar-text"><?php echo $OUTPUT->login_info() ?></li>
+                    <li><?php //echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li class="navbar-text"><?php //echo $OUTPUT->login_info() ?></li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-
+-->
 <?php
 // Check if IE7 browser and display message
 if (strpos($checkuseragent, 'MSIE 7')) {
@@ -90,15 +90,15 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
 <?php
 } ?>
 
-    <div class="container-fluid">
-    <div class="row-fluid">
+<div class="container-fluid">
+    <div class="row-fluid span12">
     <!-- HEADER: LOGO AREA -->
         <?php if ($hassocialnetworks && $hasmobileapps) { ?>
-        	<div class="span6">
+        	<div class="span3">
         <?php } else if (!$hassocialnetworks && $hasmobileapps) { ?>
-        	<div class="span6">
+        	<div class="span3">
         <?php } else if ($hassocialnetworks && !$hasmobileapps) { ?>
-        	<div class="span6">
+        	<div class="span3">
         <?php } else { ?>
         	<div class="span11">
         <?php } ?>
@@ -115,22 +115,28 @@ if (strpos($checkuseragent, 'MSIE 8') || strpos($checkuseragent, 'MSIE 7')) {?>
                 
                 <a class="logo" href="<?php echo $CFG->wwwroot; ?>" title="<?php print_string('home'); ?>"></a>
             <?php } ?>
+        </div> <!-- cierro el div donde se muestra el logo class="span4" -->
+        
+        <div class="span6" style='text-align: center; font-size: 24px; color: black; padding-top: 25px;'>
+            <strong>Bienvenido a nuestro portal universitario!</strong>
         </div>
-        <?php if (isloggedin() && $hasheaderprofilepic) { ?>
+        
+        <?php //if (isloggedin() && $hasheaderprofilepic) { ?>
+        <!--
         <div class="span1 pull-right" id="profilepic">
-            <p id="socialheading"><?php echo $USER->firstname; ?></p>
+            <p id="socialheading"><?php //echo $USER->firstname; ?></p>
             <ul class="socials unstyled">
                 <li>
-                    <a href="<?php echo $CFG->wwwroot.'/user/profile.php?id='.$USER->id; ?>">
-                        <?php echo $OUTPUT->user_picture($USER); ?>
+                    <a href="<?php //echo $CFG->wwwroot.'/user/profile.php?id='.$USER->id; ?>">
+                        <?php //echo $OUTPUT->user_picture($USER); ?>
                     </a>
                 </li>
             </ul>            
 
-        </div>
-        <?php
-        }
-
+        </div> -->
+        <?php  //} ?>
+        
+        <?php 
         // If true, displays the heading and available social links; displays nothing if false.
         if ($hassocialnetworks) {
         ?>

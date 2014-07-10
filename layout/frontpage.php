@@ -67,10 +67,10 @@ echo $OUTPUT->doctype() ?>
         <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
     <?php } ?>
     <!-- End Google Analytics -->
-    <!-- agrego el Javascript y los CSS agregados -->
-        <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/css_agregadas.css" />
-        <script type="text/javascript" src="<?php echo $CFG->wwwroot."/theme/essential/javascript/funciones_agregadas.js";?>"></script>
-        <script type="text/javascript" src="<?php echo $CFG->wwwroot."/theme/essential/javascript/bloques.js";?>"></script>
+    <!-- agrego el Javascript y los CSS agregados 
+        <link rel="stylesheet" type="text/css" href="<?php //echo $CFG->wwwroot;?>/theme/essential/style/css_agregadas.css" />
+        <script type="text/javascript" src="<?php //echo $CFG->wwwroot."/theme/essential/javascript/funciones_agregadas.js";?>"></script>
+        <script type="text/javascript" src="<?php //echo $CFG->wwwroot."/theme/essential/javascript/bloques.js";?>"></script> -->
     <!-- fin de agregar archivos -->
     <!-- SCRIPT para el modal del invitado -->
         <script type="text/javascript">
@@ -82,18 +82,20 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-    <!-- Muestro en que pagina estoy -->
-    <script>alert('layout frontpage')</script>
+    <!-- Muestro en que pagina estoy 
+    <script>alert('layout frontpage')</script> -->
     <?php echo $OUTPUT->standard_top_of_body_html() ?>
     <div id="cabecera" class="row-fluid">
-        <div id="caja-flotante" style="border: 1px black solid">
+        <div id="caja-flotante">
             <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
         </div>
         <div id="barra-fija">
             <header  role="banner" class="navbar" >
                 <nav role="navigation" class="navbar-inner navbar-fixed-top">
                     <div class="container-fluid">
-                        <a class="brand" href="<?php echo $CFG->wwwroot;?>"><i class="icon-home"> </i>&nbsp;UDC<?php //echo $SITE->shortname; ?></a>
+                        <a class="brand" href="<?php echo $CFG->wwwroot;?>">
+                            <img src="/moodle/theme/essential/pix/logo-home-udc.png" alt='Home' title="Inicio">
+                            &nbsp;UDC<?php //echo $SITE->shortname; ?></a> <!-- <i class="icon-home icon-white"> </i> -->
                         <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -105,7 +107,7 @@ echo $OUTPUT->doctype() ?>
                                     echo $custommenu;
                                 }
                             //} ?>
-                            <!-- Botones personalizados del Usuario -->
+                            <!-- Botones personalizados del Usuario -->                                
                                 <?php include 'includes/botones_usuario.php'?>
                             <!-- Fin de los botones personalizados del Usuario -->
                             <!-- Inicio info del login del usuario -->
@@ -121,7 +123,7 @@ echo $OUTPUT->doctype() ?>
             </header>
         </div>
     </div>
-    <div id="page" style="border: 2px green solid" class="container-fluid">
+    <div id="page" class="container-fluid">
         <!-- Si el usuario es INVITADO muestro MODAL -->
         <?php if(isguestuser()): ?>
             <?php require_once(dirname(__FILE__).'/includes/modal_invitado.php'); ?>
@@ -140,7 +142,7 @@ echo $OUTPUT->doctype() ?>
         <!-- Fin del boton derecho de AYUDA GENERAL -->
         
         <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
-        <div style="border: 1px yellowgreen solid" class="row-fluid">
+        <div class="row-fluid">
             
           <!-- Start Alerts -->
           <div class="span12">
@@ -249,9 +251,9 @@ echo $OUTPUT->doctype() ?>
                                 <!-- si no hay internet, muestro un div con el error -->
                                 <?php else:?>
                                   <div  style="height: 300px;"> <!-- class="alert alert-danger"-->
-                                      <div style="width: 80%; height: 60%; position: static">
-                                          <img src="/moodle/theme/udcessential/pix/udc_pagina.png" alt="Sin conexión">
-                                      </div><br><br><br>
+                                      <div style="position: static;">
+                                          <img src="/moodle/theme/essential/pix/udc_pagina.png" alt="Sin conexión" style="width: 80%; height: 60%;">
+                                      </div>
                                       <p> <!-- style="padding-top: 120px;" -->No Hay Conexión a Internet.<br>
                                           No se pueden mostrar las noticias vía RSS</p>
                                   </div>
@@ -316,7 +318,7 @@ echo $OUTPUT->doctype() ?>
         </div>
         
             <!-- Start Main Regions -->
-            <div id="page-content" class="row-fluid" style="border: 2px blue solid">
+            <div id="page-content" class="row-fluid">
                 <?php if ($hasfrontpageblocks==1) { ?>
                 <section id="region-main" class="span12 pull-right">
                 <?php } else { ?>

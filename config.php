@@ -165,7 +165,9 @@ $THEME->layouts = array(
 );
 
 $THEME->javascripts = array(
-    'coloursswitcher'
+    'coloursswitcher',
+    'funciones_agregadas',
+    'bloques'
 );
 
 $THEME->javascripts_footer = array(

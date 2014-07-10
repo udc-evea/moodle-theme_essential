@@ -53,8 +53,9 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-<!-- Muestro en que pagina estoy -->
-<script>alert('layout login')</script>
+<!-- Muestro en que pagina estoy 
+<script>alert('layout login')</script> -->
+
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -83,8 +84,7 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/css_agregadas.css" />
-<script src="<?php echo $CFG->wwwroot."/theme/essential/javascript/bloques.js";?>"></script>
+
 <script type="text/javascript">
 jQuery(document).ready(function() {
     var offset = 220;

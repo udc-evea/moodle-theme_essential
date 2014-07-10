@@ -56,14 +56,57 @@ echo $OUTPUT->doctype() ?>
         <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
     <?php } ?>
     <!-- End Google Analytics -->
+    <!-- agrego el Javascript y los CSS agregados 
+        <link rel="stylesheet" type="text/css" href="<?php //echo $CFG->wwwroot;?>/theme/essential/style/css_agregadas.css" />
+        <script type="text/javascript" src="<?php //echo $CFG->wwwroot."/theme/essential/javascript/funciones_agregadas.js";?>"></script>
+        <script type="text/javascript" src="<?php //echo $CFG->wwwroot."/theme/essential/javascript/bloques.js";?>"></script> -->
+    <!-- fin de agregar archivos -->
+    <!-- SCRIPT para el modal del invitado -->
+        <script type="text/javascript">
+            $(document).ready(function(){
+               $("#myModal").modal('show');
+            });
+        </script>
+    <!-- FIN de SCRIPT del modal del invitado -->
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-<!-- Muestro en que pagina estoy -->
-<script>alert('layout Columns 2')</script>
+<!-- Muestro en que pagina estoy 
+<script>alert('layout Columns 2')</script> -->
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
+<?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
+<header  role="banner" class="navbar" >
+                <nav role="navigation" class="navbar-inner navbar-fixed-top">
+                    <div class="container-fluid">
+                        <a class="brand" href="<?php echo $CFG->wwwroot;?>">
+                            <img src="/moodle/theme/essential/pix/logo-home-udc.png" alt='Home' title="Inicio">
+                            &nbsp;UDC<?php //echo $SITE->shortname; ?></a> <!-- <i class="icon-home icon-white"> </i> -->
+                        <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse collapse">
+                            <?php //if ($hascustommenu) {
+                                if(!isguestuser()){
+                                    echo $custommenu;
+                                }
+                            //} ?>
+                            <!-- Botones personalizados del Usuario -->                                
+                                <?php include 'includes/botones_usuario.php'?>
+                            <!-- Fin de los botones personalizados del Usuario -->
+                            <!-- Inicio info del login del usuario -->
+                            <ul class="nav pull-right">
+                                <li class="dropdown">
+                                    <?php echo $OUTPUT->login_info() ?>
+                                </li>
+                            </ul>
+                            <!-- Fin info del login del usuario -->
+                        </div>
+                    </div>
+                </nav>
+</header>
 
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
@@ -98,8 +141,7 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_end_of_body_html() ?>
 
 </div>
-<link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/css_agregadas.css" />
-<script src="<?php echo $CFG->wwwroot."/theme/essential/javascript/bloques.js";?>"></script>
+
 <script type="text/javascript">
 jQuery(document).ready(function() {
     var offset = 220;

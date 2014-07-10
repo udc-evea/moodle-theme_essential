@@ -39,8 +39,9 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-<!-- Muestro en que pagina estoy -->
-<script>alert('layout maintenance')</script>
+<!-- Muestro en que pagina estoy 
+<script>alert('layout maintenance')</script> -->
+
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
 <div id="page" class="container-fluid">
