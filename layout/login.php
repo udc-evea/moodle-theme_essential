@@ -42,9 +42,9 @@ echo $OUTPUT->doctype() ?>
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google web fonts -->
-    <?php require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/fonts.php'); ?>
     <!-- iOS Homescreen Icons -->
-    <?php require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
+    <?php //require_once(dirname(__FILE__).'/includes/iosicons.php'); ?>
     <!-- Start Google Analytics -->
     <?php if ($hasanalytics) { ?>
         <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
@@ -58,15 +58,46 @@ echo $OUTPUT->doctype() ?>
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 
-<?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
-
+<?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
+<header  role="banner" class="navbar" >
+                <nav role="navigation" class="navbar-inner navbar-fixed-top">
+                    <div class="container-fluid">
+                        <a class="brand" href="<?php echo $CFG->wwwroot;?>">
+                            <img src="/moodle/theme/essential/pix/logo-home-udc.png" alt='Home' title="Inicio">
+                            &nbsp;UDC<?php //echo $SITE->shortname; ?></a> <!-- <i class="icon-home icon-white"> </i> -->
+                        <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <div class="nav-collapse collapse">
+                            <?php //if ($hascustommenu) {
+                                if(!isguestuser()){
+                                    echo $custommenu;
+                                }
+                            //} ?>
+                            <!-- Botones personalizados del Usuario -->                                
+                                <?php include 'includes/botones_usuario.php'?>
+                            <!-- Fin de los botones personalizados del Usuario -->
+                            <!-- Inicio info del login del usuario -->
+                            <ul class="nav pull-right">
+                                <li class="dropdown">
+                                    <?php echo $OUTPUT->login_info() ?>
+                                </li>
+                            </ul>
+                            <!-- Fin info del login del usuario -->
+                        </div>
+                    </div>
+                </nav>
+</header>
+<br><br>
 <div id="page" class="container-fluid">
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">
         <section id="region-main" class="span12">
             <div id="page-navbar" class="clearfix">
                 <nav class="breadcrumb-button"><?php echo $OUTPUT->page_heading_button(); ?></nav>
-                <div class="breadcrumb-nav"><?php echo $OUTPUT->navbar(); ?></div>
+                <div class="breadcrumb-nav linksRastro"><?php echo $OUTPUT->navbar(); ?></div>
             </div>
             <?php
             echo $OUTPUT->course_content_header();

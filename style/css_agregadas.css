@@ -101,3 +101,10 @@
     padding: 30px;
     border-radius: 15px;
 }
+/* reglas para el form de login (no el dropdown) */
+.loginpanel {
+    background-color: whitesmoke;
+    border-radius: 15px;
+    width: 50%;
+    margin-left: 25%;
+}
