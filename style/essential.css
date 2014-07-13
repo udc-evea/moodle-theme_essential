@@ -1221,10 +1221,11 @@ table#greyboxleft h2 {
 
 .courses .coursebox {
     background: #fff;
-    border-radius: 10px;
+    border-radius: 0px;
     border: 1px solid #E1E1E1 !important;
     padding: 10px;
     box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    float:left;
 }
 
 .courses .coursebox.even,
