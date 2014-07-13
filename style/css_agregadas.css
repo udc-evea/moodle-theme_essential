@@ -68,7 +68,7 @@
 }
 /* redondeo las puntas del footer */
 #page-footer{
-    border-radius: 18px;
+    border-radius: 0px;
 }
 /* defino el color del fondo de los cursos */
 .topics{
