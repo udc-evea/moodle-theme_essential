@@ -103,7 +103,7 @@
 }
 /* reglas para el form de login (no el dropdown) */
 .loginpanel {
-    background-color: whitesmoke;
+    background-color: red;
     border-radius: 15px;
     width: 50%;
     margin-left: 25%;
