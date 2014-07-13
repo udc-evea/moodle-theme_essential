@@ -295,15 +295,15 @@ ul.socials {
 
 .breadcrumb {
     padding: 0px;
-    color: #555;
-    text-transform: uppercase;
-    font-size: .9em;
+    color: #fffff;
+    text-transform: lowercase;
+    font-size: 1em;
     background: transparent;
     margin: 0px;
 }
 
 .breadcrumb-button {
-    margin-top: -4px;
+    margin-top: 0px;
 }
 
 ul.breadcrumb span.divider {
@@ -312,11 +312,10 @@ ul.breadcrumb span.divider {
 
 ul.breadcrumb li:after {
     font-family: FontAwesome;
-    font-size: 1.1em;
+    font-size: 1em;
     margin: 0px 6px 0px 3px;
-    color: #bbb;
+    color: #fafafa;
 }
-
 ul.breadcrumb li:last-child:after {
     content: none;
 }
