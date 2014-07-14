@@ -14,6 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/* agrego las variables para mostrar el custom menu */
+$custommenu = $OUTPUT->custom_menu();
+$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
+
 $bodyclasses = array();
 $bodyclasses[] = 'essential-colours-' . theme_essential_get_colours();
 
@@ -30,11 +34,11 @@ echo $OUTPUT->doctype() ?>
 <!-- Muestro en que pagina estoy 
 <script>alert('layout secure')</script> -->
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-
-<header role="banner" class="navbar navbar-fixed-top">
+<?php include 'includes/barraFixedTop.php'; ?>
+<!-- <header role="banner" class="navbar navbar-fixed-top">
     <nav role="navigation" class="navbar-inner">
         <div class="container-fluid">
-            <a class="brand" href="<?php echo $CFG->wwwroot;?>"><?php echo $SITE->shortname; ?></a>
+            <a class="brand" href="<?php //echo $CFG->wwwroot;?>"><?php //echo $SITE->shortname; ?></a>
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -42,12 +46,12 @@ echo $OUTPUT->doctype() ?>
             </a>
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
-                    <li><?php echo $OUTPUT->page_heading_menu(); ?></li>
+                    <li><?php //echo $OUTPUT->page_heading_menu(); ?></li>
                 </ul>
             </div>
         </div>
     </nav>
-</header>
+</header> -->
 
 <div id="page" class="container-fluid">
 

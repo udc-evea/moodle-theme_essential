@@ -104,7 +104,8 @@
 			} else {
 				$branchtitle = get_string('mycourses', 'theme_essential');
 			}
-			$branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+			//$branchlabel = '<i class="fa fa-briefcase"></i>'.$branchtitle;
+                        $branchlabel = '<i class="icon-book icon-white"></i> '.$branchtitle;
             $branchurl   = new moodle_url('/my/index.php');
             $branchsort  = 10000;
  
@@ -112,7 +113,7 @@
  			if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
  				foreach ($courses as $course) {
  					if ($course->visible){
- 						$branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+ 						$branch->add("<i class='icon-chevron-right'></i> ".format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
  					}
  				}
  			} else {

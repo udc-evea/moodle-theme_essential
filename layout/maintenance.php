@@ -23,6 +23,11 @@
  * If you are modifying this file please be extremely careful, one wrong API call and you could end up
  * breaking installation or upgrade unwittingly.
  */
+
+/* agrego las variables para mostrar el custom menu */
+$custommenu = $OUTPUT->custom_menu();
+$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
+
 theme_essential_check_colours_switch();
 theme_essential_initialise_colourswitcher($PAGE);
 
@@ -43,7 +48,7 @@ echo $OUTPUT->doctype() ?>
 <script>alert('layout maintenance')</script> -->
 
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
-
+<?php include 'includes/barraFixedTop.php'; ?>
 <div id="page" class="container-fluid">
 
     <header id="page-header" class="clearfix">

@@ -23,6 +23,11 @@
  * @author     Based on code originally written by G J Bernard, Mary Evans, Bas Brands, Stuart Lamour and David Scotson.
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+/* agrego las variables para mostrar el custom menu */
+$custommenu = $OUTPUT->custom_menu();
+$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
+
 $hashiddendock = (empty($PAGE->layout_options['noblocks']) && $PAGE->blocks->region_has_content('hidden-dock', $OUTPUT));
 $sideregionsmaxwidth = (!empty($PAGE->theme->settings->sideregionsmaxwidth));
 
@@ -84,43 +89,13 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
     <!-- Muestro en que pagina estoy 
     <script>alert('layout frontpage')</script> -->
-    <?php echo $OUTPUT->standard_top_of_body_html() ?>
+    <?php echo $OUTPUT->standard_top_of_body_html() ?>    
     <div id="cabecera" class="row-fluid">
         <div id="caja-flotante">
             <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
         </div>
         <div id="barra-fija">
-            <header  role="banner" class="navbar" >
-                <nav role="navigation" class="navbar-inner navbar-fixed-top">
-                    <div class="container-fluid">
-                        <a class="brand" href="<?php echo $CFG->wwwroot;?>">
-                            <img src="/moodle/theme/essential/pix/logo-home-udc.png" alt='Home' title="Inicio">
-                            &nbsp;UDC<?php //echo $SITE->shortname; ?></a> <!-- <i class="icon-home icon-white"> </i> -->
-                        <a class="btn btn-navbar" data-toggle="workaround-collapse" data-target=".nav-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </a>
-                        <div class="nav-collapse collapse">
-                            <?php //if ($hascustommenu) {
-                                if(!isguestuser()){
-                                    echo $custommenu;
-                                }
-                            //} ?>
-                            <!-- Botones personalizados del Usuario -->                                
-                                <?php include 'includes/botones_usuario.php'?>
-                            <!-- Fin de los botones personalizados del Usuario -->
-                            <!-- Inicio info del login del usuario -->
-                            <ul class="nav pull-right">
-                                <li class="dropdown">
-                                    <?php echo $OUTPUT->login_info() ?>
-                                </li>
-                            </ul>
-                            <!-- Fin info del login del usuario -->
-                        </div>
-                    </div>
-                </nav>
-            </header>
+            <?php include 'includes/barraFixedTop.php'; ?>
         </div>
     </div>
     <div id="page" class="container-fluid">

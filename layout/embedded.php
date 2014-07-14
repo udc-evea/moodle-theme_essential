@@ -14,6 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/* agrego las variables para mostrar el custom menu */
+$custommenu = $OUTPUT->custom_menu();
+$hascustommenu = (empty($PAGE->layout_options['nocustommenu']) && !empty($custommenu));
+
 theme_essential_check_colours_switch();
 theme_essential_initialise_colourswitcher($PAGE);
 
@@ -30,9 +34,10 @@ echo $OUTPUT->doctype() ?>
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
-    <!-- Muestro en que pagina estoy 
+<!-- Muestro en que pagina estoy 
 <script>alert('layout embedded')</script> -->
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
+<?php include 'includes/barraFixedTop.php'; ?>
 <div id="page">
     <div id="page-content" class="clearfix">
         <?php echo $OUTPUT->main_content(); ?>

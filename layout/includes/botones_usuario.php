@@ -123,7 +123,7 @@
                 <?php if(($isStudent || $isTeacher)):?>
                 <!--
                 <div class="btn-group" style="margin-top: 0px">
-                    <form action="<?php echo $host ?>" method="post" accept-charset="utf-8">
+                    <form action="<?php //echo $host ?>" method="post" accept-charset="utf-8">
                         <input type="hidden" name="faqloginaction" value="login">
                         <input type="hidden" name="faqusername" id="faqusername" required="required" value="<?php echo $FaqUserName ?>">
                         <input type="hidden" name="faqpassword" id="faqpassword" required="required" value="<?php echo $FaqUserPass ?>">
