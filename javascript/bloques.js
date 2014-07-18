@@ -2,7 +2,7 @@ $(function() {
   
   $(".block").each(function(i, elem) {
     var titulo = $(elem).find("div.header h2").text();
-    console.log(titulo);
+    /*console.log(titulo);*/
 
     var $bloque = $(elem).detach();
 

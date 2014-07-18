@@ -76,7 +76,8 @@ echo $OUTPUT->doctype() ?>
         <link rel="stylesheet" type="text/css" href="<?php //echo $CFG->wwwroot;?>/theme/essential/style/css_agregadas.css" />
         <script type="text/javascript" src="<?php //echo $CFG->wwwroot."/theme/essential/javascript/funciones_agregadas.js";?>"></script>
         <script type="text/javascript" src="<?php //echo $CFG->wwwroot."/theme/essential/javascript/bloques.js";?>"></script> -->
-    <!-- fin de agregar archivos -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/styleChat.css" />    
+    <!-- fin de agregar archivos -->    
     <!-- SCRIPT para el modal del invitado -->
         <script type="text/javascript">
             $(document).ready(function(){
@@ -265,6 +266,10 @@ echo $OUTPUT->doctype() ?>
                     <!-- End Marketing Spots -->
                 </div> 
                 <!-- FIN del RSS y los dos SLIDES -->
+            <?php else: ?>
+                <!-- MUESTRO EL CHAT LOCAL -->
+                    <?php include 'includes/chat.php'; ?> 
+                <!-- FIN DEL CHAT LOCAL -->
             <?php endif; ?>
         </div>
         

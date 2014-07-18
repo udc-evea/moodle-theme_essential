@@ -143,6 +143,15 @@
                 <?php if($cant>0):?>
                     <span class="badge" style='background-color: red'><?php echo $cant; ?></span> 
                 <?php endif;?></a>
+                <!-- boton de para la sala de chat -->
+                <!--<form action="<?php //echo $CFG->wwwroot."/theme/essential/layout/includes/index.php";?>" method="post">                    
+                    <input type="hidden" name="name" id="name" value="<?php //echo $USER->firstname ?>" />                    
+                    <button class="btn btn-info" type="submit" title="Sala de chat">
+                            <i class="icon-white icon-user"></i>
+                    </button>
+                </form> -->
+                <!-- <a href="<?php //echo $CFG->wwwroot."/theme/essential/layout/includes/index.php";?>" class="btn btn-info" title="Sala de Chat"><i class="icon-white icon-key"></i></a> -->
+                <!-- FIN boton de para la sala de chat -->
             </div>
         </div>
     </ul>
