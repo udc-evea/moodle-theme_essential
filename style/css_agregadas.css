@@ -84,7 +84,7 @@
 }
 /* defino el fondo del div que muestra el resumen de los cursos en el frontpage */
 .coursebox{
-    background-color: #F6F6E8 !important;
+    background-color: #FAFAFA !important;
     //background-position: left .0em !important;
 }
 /* quito estilo del boton de Activar/Desactivar Edicion */
