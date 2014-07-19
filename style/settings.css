@@ -340,7 +340,7 @@ a#button:hover {
 /* @group Footer */
 
 #page-footer {
-    background: [[setting:footercolor]];
+    background: #2c3e50;
     color: [[setting:footertextcolor]];
     border-top: 3px solid [[setting:themecolor]];
 }
