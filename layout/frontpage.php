@@ -206,7 +206,7 @@ echo $OUTPUT->doctype() ?>
                                            rssmikle_title_color="#FFFFFF";
                                            rssmikle_title_bgimage="";
                                            rssmikle_item_bgcolor="#F7F5F5";//"#FFFFFF";
-                                           rssmikle_item_bgimage="http://localhost/moodle/theme/image.php/udcessential/theme/1391712447/bg/header";
+                                           rssmikle_item_bgimage="";//"http://localhost/moodle/theme/image.php/udcessential/theme/1391712447/bg/header";
                                            rssmikle_item_title_length="55";
                                            rssmikle_item_title_color="#666666";
                                            rssmikle_item_border_bottom="on";

@@ -108,3 +108,21 @@
     width: 50%;
     margin-left: 25%;
 }
+/* reglas que controlan el formulario de login (el dropdown) */
+.control-group {
+    margin-bottom: 10px;
+}
+.input-append, .input-prepend {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.input-prepend .add-on, .input-prepend .btn {
+    margin-right: -1px;
+}
+.input-small {
+    width: 90px;
+    margin-top: 2px;
+}
