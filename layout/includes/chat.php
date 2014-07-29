@@ -1,4 +1,4 @@
-<?php if(!isguestuser()): ?>
+<?php if(!isguestuser() and !is_siteadmin()): //si no es usuario INVITADO ni es ADMIN muesrto el chat ?> 
     <?php 
           $urlInterno = $CFG->wwwroot."/theme/essential/layout/includes/";
           $apeNomUser = $USER->lastname.", ".$USER->firstname;
@@ -28,9 +28,12 @@
     </div>
 
     <script>
-        //funcion para ocultar la ventana de chat
+        //funcion para ocultar la ventana de chat 
+        //oculto la ventana del chat
+        $( "#chatContenido" ).slideToggle(800);        
+        // si clickeo el boton se oculta/muestra el chat
         $( "#botonOcultaChat" ).click(function() {
-            $( "#chatContenido" ).slideToggle( "slow" );
+            $( "#chatContenido" ).slideToggle(800);
         });
 
         //If user submits the form
