@@ -5,8 +5,8 @@
     ?>
     <div id="caja"> <!-- caja contenedora del menu + chat + form -->
         <div id="chatMenu"> <!-- caja contenedora del MENU del chat -->
-            <p class="welcome"><b><?php echo $apeNomUser ?></b></p>
-            <button id="botonOcultaChat" name="Expandir/Bajar chat"></button>
+            <p class="welcome" id="botonOcultaChat"><b><?php echo $apeNomUser ?></b></p>
+            <!--<button id="botonOcultaChat" name="Expandir/Bajar chat"></button> -->
         </div>
         <div id="chatContenido"> <!-- caja contenedora del chat + form -->
             <div id="chatbox">
@@ -19,8 +19,8 @@
                     }
                 ?>
             </div>
-            <form name="message" action="">
-                <input name="usermsg" type="text" id="usermsg" size="40" />
+            <form name="message" action="" id="formChat">
+                <input name="usermsg" type="text" id="usermsg" size="40" placeholder="comentar" />
                 <input name="submitmsg" type="submit"  id="submitmsg" value="Enviar" />
                 <input name="nameUser" type="hidden" id="nameUser" value="<?php echo $apeNomUser ?>"/>
             </form>
@@ -34,14 +34,15 @@
         // si clickeo el boton se oculta/muestra el chat
         $( "#botonOcultaChat" ).click(function() {
             $( "#chatContenido" ).slideToggle(800);
-        });
+        });        
 
         //If user submits the form
         $("#submitmsg").click(function(){
             var clientmsg = $("#usermsg").val();
             var nameUser = $("#nameUser").val();
             $.post("theme/essential/layout/includes/post.php", {text: clientmsg, name: nameUser});
-            $("#usermsg").attr("value", "");
+            //$("#usermsg").attr("value", "");
+            $("#usermsg").val('');
             return false;
         });
 
