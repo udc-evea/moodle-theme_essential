@@ -69,6 +69,6 @@
                 });
             }
         //Defino el intervalo de actualiación del chat
-        setInterval (loadLog, 1000);    //Reload file every 2500 ms or x ms if you wish to change the second parameter
+        setInterval (loadLog, 2500);    //Reload file every 2500 ms or x ms if you wish to change the second parameter
     </script>
 <?php endif; ?>
