@@ -9,103 +9,9 @@ and open the template in the editor.
 */
 
 /* CSS Document */
-  
-form, p, span {
-    margin:2px;
-    padding:0;
-}
 
-input { 
-    font:12px arial; 
-}
-  
-a {
-    text-decoration:none; 
-}
-  
-a:hover { 
-    text-decoration:underline; 
-}
- 
-#botonOcultaChat {
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
-    background-color: grey;
-    border: none;
-    width: 20px;
-    height: 10px;
-}
-/*#contenidoChat {
-    border: 2px solid red;
-    margin-left: 65%;
-    height: 65%;
-    background-color: #EBF4FB;
-    position: fixed;	
-    bottom: 0px;
-    width: 25%;
-    float: right;
-}
-#chatMenu {
-    height: 30px;
-    bottom: 0px;
-    width: 100%;
-    float: right;
-    padding:5px 5px 5px 5px;    
-}
-#chatbox {
-    text-align:left;
-    margin: 15px 2px 5px 2px;
-    margin-bottom:25px;
-    padding:10px;
-    background:#fff;
-    height:70%;
-    width:90%;
-    /*border:1px solid black;//#ACD8F0;
-    overflow: scroll;
-}
-
-#ventanaChat {
-    /*margin-left: 65%; 
-    background:#EBF4FB;
-    width:25%;
-    height: 65%;
-    border:1px solid #ACD8F0; 
-    position: fixed;
-    bottom: 0px;    
- }
-#caja {
-    border:3px solid #ACD8F0;
-    margin-left: 65%;
-    height: 65%;
-    position: fixed;
-    bottom: 0px;
-    width:25%;
-    float: right;
-    background:#EBF4FB;
-}
-#chatMenu {
-    height: 30px;
-    width: 100%;
-    bottom: 0px;
-    float: right;
-    /*padding:5px 5px 5px 5px; /
-}
-#chatContenido {
-    height:80%;
-    bottom: 30px;
-    width:80%;
-    background:graytext;
-}
-#chatbox {
-    text-align:left;
-    /*margin: 15px 2px 5px 2px;
-    margin-bottom:25px;
-    padding:10px; /
-    background:#fff;
-    overflow: scroll;
-}*/
-#caja {
+/* css de la ventana de chat */
+#caja{
     border: 1px solid #6EB4DA;
     margin-left: 65%;
     position: fixed;	
@@ -114,36 +20,77 @@ a:hover {
     float: right;
     background:#ACD8F0;
 }
-#chatMenu {
+/* css de la cabecera de la ventana de chat */
+#chatMenu{
     height: 30px;
     bottom: 0px;
+    background-color: #019DEB;
+    text-align: center;
+    color: white;
 }
-#chatbox {
+/* css del div donde estan los mjes de log.html */
+#chatbox{
+    //border: 1px solid #6EB4DA;
     height: 300px;
-    bottom: 30px;
-    margin: 5px;
-    text-align:left;        
-    background:#fff;
-    overflow: scroll;
+    width: 96%;
+    margin-left: 5px;
+    margin-top: 3px;
+    margin-right: 5px;
+    text-align:left;    
+    overflow-y: scroll;
 }
-
-#usermsg {
-    width:95%;
-    /*border:2px solid blue;//#ACD8F0; */
-} 
-
-#submit { width: 80%; }
-  
-.welcome { float:left; }
-
-.msgln { margin:0 0 0 0; }
-
-#lineaChatFecha {
-    font-size: 8pt;    
+/* css del nombre del usuario (con click hace el efecto toggle) */
+//#botonOcultaChat{
+//    float: left;
+//    margin-left: 10px;    
+//
+//}
+/* css del form inferior donde escribe el usuario */
+#formChat{
+    width: 96%;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+/* css del boton oculto de envio del formulario */
+#submitmsg{
+    position: absolute;
+    height: 0px;
+    width: 0px;
+    border: none;
+    padding: 0px;
+}
+/* css del input donde escribe el usuario */
+#usermsg{
+    width:91%;
+}
+/* css del div de cada mje cargado de log.html */
+.msgln{
+    background-color: #C9EBFC;
+    border-radius: 10px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: -5px;
+}
+#pChat{
+    margin-left: 2px; 
+    margin-right: 2px;
+    margin-top: -10px;
+}
+/* css de la fecha de cada mensaje de log.html */
+#lineaChatFecha{
+    font-size: 6pt;
     color: gray;
     font-family: Arial;
 }
+/* css del nombre de usuario de cada mensaje de log.html */
 #lineaChatNameUser{
-    font-size: 10pt;
+    font-size: 8pt;
     font-family: Arial;
+}
+/* css del footer de la ventana de chat */
+#noteFooterChat{
+    font-size: 9px;
+    float: left;
+    margin-top: -20px;
+    margin-left: 70px;
 }

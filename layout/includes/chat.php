@@ -20,9 +20,15 @@
                 ?>
             </div>
             <form name="message" action="" id="formChat">
-                <input name="usermsg" type="text" id="usermsg" size="40" placeholder="comentar" />
-                <input name="submitmsg" type="submit"  id="submitmsg" value="Enviar" />
+                <div class="control-group">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="icon icon-retweet"></i></span>
+                        <input name="usermsg" type="text" id="usermsg" size="40" placeholder="comentar" />
+                    </div>
+                </div>
+                <input name="submitmsg" type="submit"  id="submitmsg" value="Enviar" hidefocus="true" tabindex="-1" />
                 <input name="nameUser" type="hidden" id="nameUser" value="<?php echo $apeNomUser ?>"/>
+                <span id="noteFooterChat">Chat general de la Universidad del Chubut</span>
             </form>
         </div>
     </div>
@@ -63,6 +69,6 @@
                 });
             }
         //Defino el intervalo de actualiación del chat
-        setInterval (loadLog, 2500);    //Reload file every 2500 ms or x ms if you wish to change the second parameter
+        setInterval (loadLog, 1000);    //Reload file every 2500 ms or x ms if you wish to change the second parameter
     </script>
 <?php endif; ?>
