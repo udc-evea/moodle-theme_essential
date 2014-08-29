@@ -54,6 +54,7 @@ echo $OUTPUT->doctype() ?>
         <?php require_once(dirname(__FILE__).'/includes/analytics.php'); ?>
     <?php } ?>
     <!-- End Google Analytics -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/styleChat.css" />    
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
@@ -63,6 +64,9 @@ echo $OUTPUT->doctype() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
 <?php include 'includes/barraFixedTop.php'; ?>
+    <!-- MUESTRO EL CHAT LOCAL -->
+    <?php include 'includes/chat.php'; ?> 
+    <!-- FIN DEL CHAT LOCAL -->
 <div id="page" class="container-fluid">
     <!-- Start Main Regions -->
     <div id="page-content" class="row-fluid">

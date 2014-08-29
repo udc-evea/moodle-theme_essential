@@ -83,7 +83,7 @@ echo $OUTPUT->doctype() ?>
             $(document).ready(function(){
                $("#myModal").modal('show');
             });
-        </script>
+        </script>        
     <!-- FIN de SCRIPT del modal del invitado -->
 </head>
 

@@ -1,6 +1,8 @@
 <?php if(!isguestuser() and !is_siteadmin()): //si no es usuario INVITADO ni es ADMIN muesrto el chat ?> 
     <?php 
-          $urlInterno = $CFG->wwwroot."/theme/essential/layout/includes/";
+          //$urlInterno = $CFG->wwwroot."/theme/essential/layout/includes/";
+          $urlInterno = $CFG->wwwroot."/../..";
+          //$urlInterno = $urlInterno."moodle/theme/essential/layout/includes/";
           $apeNomUser = $USER->lastname.", ".$USER->firstname;
     ?>
     <div id="caja"> <!-- caja contenedora del menu + chat + form -->
@@ -46,17 +48,34 @@
         $("#submitmsg").click(function(){
             var clientmsg = $("#usermsg").val();
             var nameUser = $("#nameUser").val();
-            $.post("theme/essential/layout/includes/post.php", {text: clientmsg, name: nameUser});
+            var urlFinal = "../theme/essential/layout/includes/post.php";
+            var urlActual = document.location;
+            var urlActual = String(urlActual);
+            var cant = urlActual.length;
+            var strComparacion = urlActual.substring(cant-7, cant-1);
+            if(strComparacion === "moodle"){
+                urlFinal = "theme/essential/layout/includes/post.php";
+            }
+            
+            $.post(urlFinal, {text: clientmsg, name: nameUser});
             //$("#usermsg").attr("value", "");
             $("#usermsg").val('');
             return false;
         });
 
         //Load the file containing the chat log
-        function loadLog(){     
+        function loadLog(){
             var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
+            var urlFinal = "../theme/essential/layout/includes/log.html";
+            var urlActual = document.location;
+            var urlActual = String(urlActual);
+            var cant = urlActual.length;
+            var strComparacion = urlActual.substring(cant-7, cant-1);
+            if(strComparacion === "moodle"){
+                urlFinal = "theme/essential/layout/includes/log.html";
+            }
             $.ajax({
-                url: "theme/essential/layout/includes/log.html",
+                url: urlFinal,//url: "theme/essential/layout/includes/log.html",
                 cache: false,
                 success: function(html){        
                     $("#chatbox").html(html); //Insert chat log into the #chatbox div

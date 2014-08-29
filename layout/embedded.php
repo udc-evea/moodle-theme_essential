@@ -31,6 +31,7 @@ echo $OUTPUT->doctype() ?>
     <link rel="shortcut icon" href="<?php echo $OUTPUT->favicon(); ?>" />
     <?php echo $OUTPUT->standard_head_html() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/styleChat.css" />    
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
@@ -38,6 +39,9 @@ echo $OUTPUT->doctype() ?>
 <script>alert('layout embedded')</script> -->
 <?php echo $OUTPUT->standard_top_of_body_html() ?>
 <?php include 'includes/barraFixedTop.php'; ?>
+    <!-- MUESTRO EL CHAT LOCAL -->
+    <?php include 'includes/chat.php'; ?> 
+    <!-- FIN DEL CHAT LOCAL -->
 <div id="page">
     <div id="page-content" class="clearfix">
         <?php echo $OUTPUT->main_content(); ?>

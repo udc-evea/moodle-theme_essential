@@ -72,6 +72,7 @@ echo $OUTPUT->doctype() ?>
             });
         </script>
     <!-- FIN de SCRIPT del modal del invitado -->
+    <link rel="stylesheet" type="text/css" href="<?php echo $CFG->wwwroot;?>/theme/essential/style/styleChat.css" />    
 </head>
 
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
@@ -81,6 +82,10 @@ echo $OUTPUT->doctype() ?>
 
 <?php //require_once(dirname(__FILE__).'/includes/header.php'); ?>
 <?php include 'includes/barraFixedTop.php'; ?>
+    <!-- MUESTRO EL CHAT LOCAL -->
+    <?php include 'includes/chat.php'; ?> 
+    <!-- FIN DEL CHAT LOCAL -->
+
 <br>
 <!-- Start Main Regions -->
 <div id="page" class="container-fluid">
