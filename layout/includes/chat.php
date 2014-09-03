@@ -38,7 +38,15 @@
     <script>
         //funcion para ocultar la ventana de chat 
         //oculto la ventana del chat
-        $( "#chatContenido" ).slideToggle(800);        
+        var urlActual = document.location;
+        var urlActual = String(urlActual);
+        var cant = urlActual.length;
+        var strComparacion = urlActual.substring(cant-7, cant-1);
+        if(strComparacion === "moodle"){
+            $( "#chatContenido" ).slideToggle(800); //mas lento
+        }else{
+            $( "#chatContenido" ).slideToggle(8);//mas rapido
+        }
         // si clickeo el boton se oculta/muestra el chat
         $( "#botonOcultaChat" ).click(function() {
             $( "#chatContenido" ).slideToggle(800);

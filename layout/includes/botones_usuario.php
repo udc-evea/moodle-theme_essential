@@ -139,10 +139,14 @@
                     <!--<a href="<?php //echo $href ?>" class="btn btn-info" title="<?php //echo $title ?>" target="_blank">
                     <i class="icon-white <?php //echo $icon ?>"></i></a> -->
                 <?php endif;?>
-                <a href="<?php echo $CFG->wwwroot."/message/index.php";?>" class="btn btn-info" title="Mensajes"><i class="icon-white icon-envelope"></i>
+                <!-- http://localhost/moodle/message/index.php?user1=2&viewing=recentconversations                  
+                <a href="<?php //echo $CFG->wwwroot."/message/index.php";?>" class="btn btn-info" title="Mensajes"><i class="icon-white icon-envelope"></i>  -->
+                <a href="<?php echo $CFG->wwwroot."/message/index.php?user1=".$USER->id."&viewing=recentconversations";?>" class="btn btn-info" title="Mensajes recientes"><i class="icon-white icon-envelope"></i>
+                
                 <?php if($cant>0):?>
                     <span class="badge" style='background-color: red'><?php echo $cant; ?></span> 
                 <?php endif;?></a>
+                <a href="<?php echo $CFG->wwwroot."/message/index.php";?>" class="btn btn-info" title="Buscar contactos"><i class="icon-white icon-search"></i></a>
                 <!-- boton de para la sala de chat -->
                 <!--<form action="<?php //echo $CFG->wwwroot."/theme/essential/layout/includes/index.php";?>" method="post">                    
                     <input type="hidden" name="name" id="name" value="<?php //echo $USER->firstname ?>" />                    

@@ -62,6 +62,7 @@ and open the template in the editor.
 /* css del input donde escribe el usuario */
 #usermsg{
     width:91%;
+    height: 100%;
 }
 /* css del div de cada mje cargado de log.html */
 .msgln{

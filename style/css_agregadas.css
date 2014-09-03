@@ -108,3 +108,38 @@
     width: 50%;
     margin-left: 25%;
 }
+/* CLASS para ver los mjes como un chat */
+.messagearea{
+    padding-right: 10px;
+}
+.singlemessage{
+    background-color: #DFF9FF;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+.messagehistory h4{
+    background-color: whitesmoke;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 5px;
+}
+.message .messagearea .messagehistory .right{
+    background-color: #DFF9FF;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid whitesmoke;
+}
+.message .messagearea .messagehistory .left{
+    background-color: #7DDEE1;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid white;
+}
+/* CLASS para modificar el tamaño de los botones de usuario */
+#btn_course_links .btn-info{
+    height: 20px;
+}
+/* CLASS para agrandar el height del input para buscar un usuario en "mensajes" */
+#combinedsearch{
+    height: 30px;
+}
