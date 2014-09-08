@@ -19,6 +19,7 @@ and open the template in the editor.
     width: 25%;
     float: right;
     background:#ACD8F0;
+    z-index: 9999;
 }
 /* css de la cabecera de la ventana de chat */
 #chatMenu{
