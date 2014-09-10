@@ -46,6 +46,7 @@
     margin-top: -21px;
     display: inline-block;
     position: fixed;
+    //z-index: 9999;
 }
 .linksRastro a{
     color: white;
