@@ -46,7 +46,6 @@
     margin-top: -21px;
     display: inline-block;
     position: fixed;
-    //z-index: 9999;
 }
 .linksRastro a{
     color: white;
@@ -112,6 +111,12 @@
 /* CLASS para ver los mjes como un chat */
 .messagearea{
     padding-right: 10px;
+    padding-left: 1px !important; 
+    border-left: 0px solid white !important; 
+}
+.messagearea .box{
+    border-radius: 5px;
+    border: 2px solid whitesmoke;
 }
 .singlemessage{
     background-color: #DFF9FF;
@@ -119,22 +124,28 @@
     margin-top: 3px;
 }
 .messagehistory h4{
-    background-color: whitesmoke;
+    //background-color: whitesmoke;
     padding-top: 3px;
     padding-bottom: 3px;
     border-radius: 5px;
+    border-top: 1px solid whitesmoke;
+}
+.messagehistory a {
+    text-decoration: none;
 }
 .message .messagearea .messagehistory .right{
-    background-color: #DFF9FF;
+    //background-color: #DFF9FF;
     border-radius: 5px;
     padding: 5px;
-    border: 1px solid whitesmoke;
+    border: 2px solid #DFF9FF;
+    margin-bottom: 5px;
 }
 .message .messagearea .messagehistory .left{
-    background-color: #7DDEE1;
+    //background-color: #7DDEE1;
     border-radius: 5px;
     padding: 5px;
-    border: 1px solid white;
+    border: 2px solid #7DDEE1;
+    margin-bottom: 5px;
 }
 /* CLASS para modificar el tamaño de los botones de usuario */
 #btn_course_links .btn-info{
