@@ -7,7 +7,7 @@
     ?>
     <div id="caja"> <!-- caja contenedora del menu + chat + form -->
         <div id="chatMenu"> <!-- caja contenedora del MENU del chat -->
-            <p class="welcome" id="botonOcultaChat"><b><?php echo $apeNomUser ?></b></p>
+            <p class="welcome" id="botonOcultaChat"><b><?php echo $apeNomUser ?></b><i id="iconoChat" class="icon icon-minus icon-white"></i></p>
             <!--<button id="botonOcultaChat" name="Expandir/Bajar chat"></button> -->
         </div>
         <div id="chatContenido"> <!-- caja contenedora del chat + form -->

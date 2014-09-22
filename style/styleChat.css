@@ -18,7 +18,7 @@ and open the template in the editor.
     bottom: 0px;
     width: 25%;
     float: right;
-    background:#ACD8F0;
+    background: white;//#ACD8F0;
     z-index: 9999;
 }
 /* css de la cabecera de la ventana de chat */
@@ -46,6 +46,9 @@ and open the template in the editor.
 //    margin-left: 10px;    
 //
 //}
+#iconoChat{
+    float: right;
+}
 /* css del form inferior donde escribe el usuario */
 #formChat{
     width: 96%;
