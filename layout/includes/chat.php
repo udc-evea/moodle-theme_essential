@@ -73,7 +73,7 @@
 
         //Load the file containing the chat log
         function loadLog(){
-            var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height before the request
+            var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 5; //Scroll height before the request
             var urlFinal = "../theme/essential/layout/includes/log.html";
             var urlActual = document.location;
             var urlActual = String(urlActual);

@@ -12,7 +12,7 @@ and open the template in the editor.
 
 /* css de la ventana de chat */
 #caja{
-    border: 2px solid #6EB4DA;
+    border: 3px solid #6EB4DA;
     margin-left: 65%;
     position: fixed;	
     bottom: 0px;
@@ -20,6 +20,7 @@ and open the template in the editor.
     float: right;
     background: white;//#ACD8F0;
     z-index: 9999;
+    border-radius: 5px;
 }
 /* css de la cabecera de la ventana de chat */
 #chatMenu{
@@ -74,7 +75,8 @@ and open the template in the editor.
     border-radius: 10px;
     margin-left: 2px;
     margin-right: 2px;
-    margin-bottom: -5px;
+    margin-bottom: 4px;
+    border: solid 1px #9BE6F7;
 }
 #pChat{
     margin-left: 2px; 
