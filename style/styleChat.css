@@ -12,7 +12,7 @@ and open the template in the editor.
 
 /* css de la ventana de chat */
 #caja{
-    border: 3px solid #6EB4DA;
+    border: 3px solid #019DEB;
     margin-left: 65%;
     position: fixed;	
     bottom: 0px;
@@ -20,7 +20,7 @@ and open the template in the editor.
     float: right;
     background: white;//#ACD8F0;
     z-index: 9999;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 /* css de la cabecera de la ventana de chat */
 #chatMenu{
@@ -66,7 +66,7 @@ and open the template in the editor.
 }
 /* css del input donde escribe el usuario */
 #usermsg{
-    width:91%;
+    width:90%;
     height: 100%;
 }
 /* css del div de cada mje cargado de log.html */
