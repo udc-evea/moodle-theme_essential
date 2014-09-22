@@ -12,7 +12,7 @@ and open the template in the editor.
 
 /* css de la ventana de chat */
 #caja{
-    border: 1px solid #6EB4DA;
+    border: 2px solid #6EB4DA;
     margin-left: 65%;
     position: fixed;	
     bottom: 0px;
@@ -70,7 +70,7 @@ and open the template in the editor.
 }
 /* css del div de cada mje cargado de log.html */
 .msgln{
-    background-color: #C9EBFC;
+    background-color: #E3FDFF;//#C9EBFC;
     border-radius: 10px;
     margin-left: 2px;
     margin-right: 2px;
