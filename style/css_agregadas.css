@@ -108,50 +108,93 @@
     width: 50%;
     margin-left: 25%;
 }
-/* CLASS para ver los mjes como un chat */
-.messagearea{
-    padding-right: 10px;
-    padding-left: 1px !important; 
-    border-left: 0px solid white !important; 
+/* ############################################################################# */
+/* CLASS para ver los mjes como el theme ELEGANCE */
+
+.contactselector{
+    background-color: whitesmoke;    
+    display: block;
+    margin-left: 25%;
+    margin-bottom: 20px;    
+    border-radius: 10px;
+    padding: 20px;
 }
-.messagearea .box{
-    border-radius: 5px;
-    border: 2px solid whitesmoke;
+/* area donde se muestra tanto los mensajes recientes, como las conversaciones recientes */
+.messagearea{    
+    border: white solid 0px !important;
+    display: block;
+    float: none !important;
+    width: 100% !important;
+    min-width: 400px;
 }
+
+.message .contactselector{
+    float: none !important;
+    width: 50% !important;
+}
+/* area donde se muestran las conversaciones recientes */
+.messagerecent{
+    float: none !important;    
+}
+
+/* area donde se muestra las conversaciones recientes */
 .singlemessage{
-    background-color: #DFF9FF;
+    background-color: #F2FCFE;
     border-radius: 5px;
     margin-top: 3px;
 }
+.message_user_pictures{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
 .messagehistory h4{
-    //background-color: whitesmoke;
+    background-color: #30add1;
     padding-top: 3px;
     padding-bottom: 3px;
     border-radius: 5px;
-    border-top: 1px solid whitesmoke;
 }
-.messagehistory a {
+.messagehistory h4 a {
     text-decoration: none;
+    color: white;
 }
 .message .messagearea .messagehistory .right{
-    //background-color: #DFF9FF;
+    background-color: #F6FDFE;
     border-radius: 5px;
     padding: 5px;
-    border: 2px solid #DFF9FF;
+    border: 2px solid #9BE6F7;
     margin-bottom: 5px;
 }
 .message .messagearea .messagehistory .left{
-    //background-color: #7DDEE1;
+    background-color: #FFFEF3;
     border-radius: 5px;
     padding: 5px;
-    border: 2px solid #7DDEE1;
+    border: 2px solid #FAEE9E;
     margin-bottom: 5px;
-}
-/* CLASS para modificar el tamaño de los botones de usuario */
-#btn_course_links .btn-info{
-    height: 20px;
 }
 /* CLASS para agrandar el height del input para buscar un usuario en "mensajes" */
 #combinedsearch{
     height: 30px;
+}
+
+.message_form{
+    margin-left: 30% !important;
+    margin: 30px;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+    border-radius: 5px;
+}
+.message_form #name{
+    //height: 30px;
+}
+.message_form input{
+    height: 30px;
+}
+.message p{
+    /*padding-left: 25%;
+    font-size: 18px;
+    display: block;*/
+}
+/* CLASS para modificar el tamaño de los botones de usuario */
+#btn_course_links .btn-info{
+    height: 20px;
 }
