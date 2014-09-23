@@ -52,6 +52,10 @@
             $( "#chatContenido" ).slideToggle(800);
         });        
 
+        $.parpadearChat = function(color){
+            $("#botonOcultaChat").css("background-color", color);
+        };
+
         //If user submits the form
         $("#submitmsg").click(function(){
             var clientmsg = $("#usermsg").val();
@@ -68,12 +72,18 @@
             $.post(urlFinal, {text: clientmsg, name: nameUser});
             //$("#usermsg").attr("value", "");
             $("#usermsg").val('');
+            
+            //$.parpadearChat("#E3FDFF");
+            //setTimeout(parpadearChat("#E3FDFF"),1000); //color mas claro
+            //setTimeout(parpadearChat("#019DEB"),1000); //color base
+            
             return false;
         });
-
+        
         //Load the file containing the chat log
         function loadLog(){
-            var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 5; //Scroll height before the request
+            //var oldscrollHeight = $("#chatbox").attr("scrollHeight") - 5; //Scroll height before the request
+            var oldscrollHeight = $("#chatbox").scrollTop();
             var urlFinal = "../theme/essential/layout/includes/log.html";
             var urlActual = document.location;
             var urlActual = String(urlActual);
@@ -85,16 +95,18 @@
             $.ajax({
                 url: urlFinal,//url: "theme/essential/layout/includes/log.html",
                 cache: false,
-                success: function(html){        
+                success: function(html){
                     $("#chatbox").html(html); //Insert chat log into the #chatbox div
-                        //Auto-scroll           
-                        var newscrollHeight = $("#chatbox").attr("scrollHeight") - 20; //Scroll height after the request
+                        //Auto-scroll 
+                        var newscrollHeight = $("#chatbox").prop("scrollHeight") - 20; //Scroll height after the request
                         if(newscrollHeight > oldscrollHeight){
                             $("#chatbox").animate({ scrollTop: newscrollHeight }, 'normal'); //Autoscroll to bottom of div
                         }               
-                    },
+                    }
                 });
-            }
+                
+                $.parpadearChat("#019DEB");
+            }            
         //Defino el intervalo de actualiación del chat
         setInterval (loadLog, 2500);    //Reload file every 2500 ms or x ms if you wish to change the second parameter
     </script>
