@@ -5,7 +5,7 @@ and open the template in the editor.
 */
 /* 
     Created on : 15/07/2014, 14:22:48
-    Author     : nico
+   Author     : nico
 */
 
 /* CSS Document */
@@ -30,6 +30,27 @@ and open the template in the editor.
     text-align: center;
     color: white;
 }
+/* css del contenido de la cabecera de la ventana de chat */
+#divNombreUsuario{
+    width: 70%;
+    height: 100%;
+    float: left;
+    /*border: 1px solid black;*/
+}
+#divIconoMiniMaximizar{
+    width: 27%;
+    height: 100%;
+    float: right;
+    /*border: 1px solid red;*/
+}
+
+#MjeAlUsuario{
+    background-color: red;
+    position: absolute;
+    height: 20px;
+    width: 100px;
+    visibility:hidden;
+}
 /* css del div donde estan los mjes de log.html */
 #chatbox{
     //border: 1px solid #6EB4DA;
@@ -42,14 +63,14 @@ and open the template in the editor.
     overflow-y: scroll;
 }
 /* css del nombre del usuario (con click hace el efecto toggle) */
-//#botonOcultaChat{
-//    float: left;
-//    margin-left: 10px;    
-//
-//}
-#iconoChat{
-    float: right;
+#botonOcultaChat{
+    text-decoration: none;
+    color: white;
 }
+#iconoChat{
+    //float: right;
+}
+
 /* css del form inferior donde escribe el usuario */
 #formChat{
     width: 96%;

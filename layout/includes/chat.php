@@ -7,7 +7,20 @@
     ?>
     <div id="caja"> <!-- caja contenedora del menu + chat + form -->
         <div id="chatMenu"> <!-- caja contenedora del MENU del chat -->
-            <p class="welcome" id="botonOcultaChat"><b><?php echo $apeNomUser ?></b><i id="iconoChat" class="icon icon-chevron-up icon-white"></i></p>
+            <div id="divNombreUsuario">
+                <?php if(strlen($apeNomUser)>29){
+                        $nombreUser = substr($apeNomUser,0,30)."...";
+                      }else{
+                        $nombreUser = $apeNomUser;
+                      }
+                ?>
+                <p class="welcome" id="botonOcultaChat"
+                   data-toggle="tooltip" data-placement="top" title="Chat general entre Docentes y Alumnos de la UDC."
+                   ><b><?php echo $nombreUser ?></b></p>
+            </div>
+            <div id="divIconoMiniMaximizar">
+                <i id="iconoChat" class="icon icon-chevron-up icon-white"></i>
+            </div>
             <!--<button id="botonOcultaChat" name="Expandir/Bajar chat"></button> -->
         </div>
         <div id="chatContenido"> <!-- caja contenedora del chat + form -->
@@ -49,12 +62,21 @@
             $( "#chatContenido" ).slideToggle(8);//mas rapido
         }                       
         // si clickeo el boton se oculta/muestra el chat
-        $( "#botonOcultaChat" ).click(function() {
+        $("#divIconoMiniMaximizar").click(function() {
             $( "#chatContenido" ).slideToggle(800);
+            if(abajo){
+                $("#divIconoMiniMaximizar i").removeClass("icon icon-chevron-up icon-white").addClass("icon icon-chevron-down icon-white");
+                abajo = false;
+            }else{
+                $("#divIconoMiniMaximizar i").removeClass("icon icon-chevron-down icon-white").addClass("icon icon-chevron-up icon-white");
+                abajo = true;
+            }
         });
-                
+        
         //variable utilizada para determinar el tamaño del log.html
         var tamanio = 0;
+        //variable utilizada para determinar si se scrollea o no el chat
+        var scrolleo = true;
         
         //If user submits the form
         $("#submitmsg").click(function(){
@@ -72,12 +94,10 @@
             $.post(urlFinal, {text: clientmsg, name: nameUser});
             //$("#usermsg").attr("value", "");
             $("#usermsg").val('');
-            
+            scrolleo = true;
             return false;
         });
-        
-        var scrolleo = true;
-        
+                        
         //Load the file containing the chat log
         function loadLog(){
             var newTamanio = $("#chatbox").html().length;
@@ -127,14 +147,15 @@
         $("#caja").click(function(){
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
-        })
+        });
         $("#chatContenido").click(function(){
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
-        })
+        });
         $("#chatbox").click(function(){
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
-        })
+        });
+        
     </script>
 <?php endif; ?>
