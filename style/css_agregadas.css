@@ -198,3 +198,21 @@
 #btn_course_links .btn-info{
     height: 20px;
 }
+/* CLASS Para el div del FEEDBACK */
+#divFeedback{
+    border: 1px solid black;
+    position: fixed;
+    width: 600px;
+    height: 400px;
+    background-color: #019DEB;
+    color: white;
+    right: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+#divFeddCabecera{
+    border: 1px solid red;
+}
+#divFeddCuerpo{
+    border: 1px solid green;
+}

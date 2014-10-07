@@ -90,7 +90,7 @@ echo $OUTPUT->doctype() ?>
 <body <?php echo $OUTPUT->body_attributes($bodyclasses); ?>>
     <!-- Muestro en que pagina estoy 
     <script>alert('layout frontpage')</script> -->
-    <?php echo $OUTPUT->standard_top_of_body_html() ?>    
+    <?php echo $OUTPUT->standard_top_of_body_html() ?> 
     <div id="cabecera" class="row-fluid">
         <div id="caja-flotante">
             <?php require_once(dirname(__FILE__).'/includes/header.php'); ?>
@@ -107,15 +107,23 @@ echo $OUTPUT->doctype() ?>
         <!-- FIN del modal si el usuario es INVITADO -->
         
         <!-- Inicio del boton derecho de AYUDA GENERAL -->
-        <?php if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
-        <div style="float: right;">
+        <?php //if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
+        <!-- <div style="float: right;">
             <div style="position: fixed;">
-                <?php $host = 'http://udc.edu.ar';//$CFG->wwwroot.'/theme/udcessential/layout/includes/ayudaGeneral.php'; ?>
-                <a href="<?php echo $host; ?>" target="_blank"><img src="/moodle/theme/essential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
+                <?php //$host = 'http://udc.edu.ar';//$CFG->wwwroot.'/theme/udcessential/layout/includes/ayudaGeneral.php'; ?>
+                <a href="<?php //echo $host; ?>" target="_blank"><img src="/moodle/theme/essential/pix/ayuda.png" alt='Ayuda' title="Ayuda General" width="50px" height="50px" style="padding-left: 15%" ></a>
             </div>
-        </div>
-        <?php endif;?>
+        </div> -->
+        <?php //endif;?>
         <!-- Fin del boton derecho de AYUDA GENERAL -->
+        
+        <?php //var_dump($USER);?>
+        <!-- Inicio del boton derecho de FEEDBACK -->
+        <?php //if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
+        <?php //require_once(dirname(__FILE__).'/includes/feedback.php'); ?>
+        <?php //endif;?>
+        <!-- Fin del boton derecho de FEEDBACK -->
+        
         
         <!-- Inicio del div que contiene las ALERTAS, SLIDES y SPOTS -->
         <div class="row-fluid">

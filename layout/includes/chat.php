@@ -62,7 +62,7 @@
             $( "#chatContenido" ).slideToggle(8);//mas rapido
         }                       
         // si clickeo el boton se oculta/muestra el chat
-        $("#divIconoMiniMaximizar").click(function() {
+        $("#chatMenu").click(function() {
             $( "#chatContenido" ).slideToggle(800);
             if(abajo){
                 $("#divIconoMiniMaximizar i").removeClass("icon icon-chevron-up icon-white").addClass("icon icon-chevron-down icon-white");
@@ -97,6 +97,23 @@
             scrolleo = true;
             return false;
         });
+        
+        //variable para la funcion de titilar el chat
+        var titilar = true;
+        var tiempo = 1000;
+        var intervaloTitilarchar;
+        
+        function titilarChat(){
+            if(titilar){
+              $("#caja").css("border","3px solid green");
+              $("#chatMenu").css("background-color","green");
+              titilar = false;
+            }else{    
+              $("#caja").css("border","3px solid #019DEB");
+              $("#chatMenu").css("background-color","#019DEB");
+              titilar = true;
+            }
+        }
                         
         //Load the file containing the chat log
         function loadLog(){
@@ -134,8 +151,9 @@
              var multiplode35 = ((diff % 35) === 0);
              //alert("multiplo: "+multiplode35);
              if((newTamanio > tamanio) && (tamanio !== 0) && (tamanio !== 29) &&(!multiplode35)){
-                 $("#caja").css("border","3px solid green");
-                 $("#chatMenu").css("background-color","green");
+                 //$("#caja").css("border","3px solid green");
+                 //$("#chatMenu").css("background-color","green");
+                 intervaloTitilarChat = setInterval(titilarChat,tiempo);
              }
              tamanio = newTamanio;
              //alert("Despues del If = tamanio: "+tamanio+" - NewTamanio: "+newTamanio);
@@ -145,14 +163,18 @@
         setInterval (loadLog, 1500);    //Reload file every 2500 ms or x ms if you wish to change the second parameter
         //cuando hacen click en el chat se pone el color azul base de siempre
         $("#caja").click(function(){
+            clearInterval(intervaloTitilarChat);
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
+            
         });
         $("#chatContenido").click(function(){
+            clearInterval(intervaloTitilarChat);
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
         });
         $("#chatbox").click(function(){
+            clearInterval(intervaloTitilarChat);
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
         });
