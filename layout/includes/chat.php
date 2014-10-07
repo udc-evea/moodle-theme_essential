@@ -103,7 +103,7 @@
         var tiempo = 1000;
         var intervaloTitilarChat = 0;
         
-        function titilarChat(){
+        function StartTitilarChat(){
             if(titilar){
               $("#caja").css("border","3px solid green");
               $("#chatMenu").css("background-color","green");
@@ -113,6 +113,13 @@
               $("#chatMenu").css("background-color","#019DEB");
               titilar = true;
             }
+        }
+        
+        function StopTitilarChat(){
+            clearInterval(intervaloTitilarChat);
+            intervaloTitilarChat = 0;
+            $("#caja").css("border","3px solid #019DEB");
+            $("#chatMenu").css("background-color","#019DEB");
         }
                         
         //Load the file containing the chat log
@@ -153,9 +160,13 @@
              if((newTamanio > tamanio) && (tamanio !== 0) && (tamanio !== 29) &&(!multiplode35)){
                  //$("#caja").css("border","3px solid green");
                  //$("#chatMenu").css("background-color","green");
-                 intervaloTitilarChat = setInterval(titilarChat,tiempo);
+                 StopTitilarChat();
+                 intervaloTitilarChat = setInterval(StartTitilarChat,tiempo);
                  //alert("intervalo: "+intervaloTitilarChat);
-             }
+             }//else{
+                // clearInterval(intervaloTitilarChat);
+                 //intervaloTitilarChat = 0;
+             //}
              tamanio = newTamanio;
              //alert("Despues del If = tamanio: "+tamanio+" - NewTamanio: "+newTamanio);
              //alert("tamOld: "+tamanio+" - NewTam: "+newTamanio);
@@ -164,23 +175,13 @@
         setInterval (loadLog, 1500);    //Reload file every 2500 ms or x ms if you wish to change the second parameter
         //cuando hacen click en el chat se pone el color azul base de siempre
         $("#caja").click(function(){
-            clearInterval(intervaloTitilarChat);
-            intervaloTitilarChat = 0;
-            $("#caja").css("border","3px solid #019DEB");
-            $("#chatMenu").css("background-color","#019DEB");
-            
+            StopTitilarChat();
         });
         $("#chatContenido").click(function(){
-            clearInterval(intervaloTitilarChat);
-            intervaloTitilarChat = 0;
-            $("#caja").css("border","3px solid #019DEB");
-            $("#chatMenu").css("background-color","#019DEB");
+            StopTitilarChat();
         });
         $("#chatbox").click(function(){
-            clearInterval(intervaloTitilarChat);
-            intervaloTitilarChat = 0;
-            $("#caja").css("border","3px solid #019DEB");
-            $("#chatMenu").css("background-color","#019DEB");
+            StopTitilarChat();
         });
         
     </script>
