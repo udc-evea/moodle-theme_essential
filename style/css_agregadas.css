@@ -202,17 +202,23 @@
 #divFeedback{
     border: 1px solid black;
     position: fixed;
-    width: 600px;
-    height: 400px;
+    width: 100px;
+    height: 100px;
     background-color: #019DEB;
     color: white;
     right: 0;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
-#divFeddCabecera{
+#divFeedCabecera{
     border: 1px solid red;
+    width: 48px;
+    height: 100px;
+    float: left;
 }
-#divFeddCuerpo{
+#divFeedCuerpo{
     border: 1px solid green;
+    width: 48px;
+    height: 100px;
+    float: right;
 }

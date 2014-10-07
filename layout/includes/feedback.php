@@ -1,10 +1,10 @@
-
-             <div id="divFeedback">
-                 <div id="divFeddCabecera">
-                     <p>Cabecera</p>
-                 </div>
-                 <div id="divFeddCuerpo">
-                     <form name="frmContacto" method="post" action="<?php dirname(__FILE__).'/includes/envioMail.php'?>">
+<div id="divFeedback">
+    <div id="divFeedCabecera">
+        <p>Cabecera</p>
+    </div>
+    <div id="divFeedCuerpo">
+        <p>Cuerpo</p>
+    <!--                 <form name="frmContacto" method="post" action="<?php dirname(__FILE__).'/includes/envioMail.php'?>">
                         <table width="500px">
                         <tr>
                         <td>
@@ -45,5 +45,14 @@
                         </tr>
                         </table>
                      </form>
-                 </div>                
-            </div>            
+    -->
+    </div>
+</div>            
+
+
+
+<script>
+    //$("#divFeedCuerpo").toggle('slide','right',1800);
+    //$("#divFeedCuerpo").slideToggle(1800);
+    $("#divFeedCuerpo").animate({width: 'toggle'});
+</script>

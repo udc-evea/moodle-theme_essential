@@ -101,7 +101,7 @@
         //variable para la funcion de titilar el chat
         var titilar = true;
         var tiempo = 1000;
-        var intervaloTitilarchar;
+        var intervaloTitilarChat = 0;
         
         function titilarChat(){
             if(titilar){
@@ -154,6 +154,7 @@
                  //$("#caja").css("border","3px solid green");
                  //$("#chatMenu").css("background-color","green");
                  intervaloTitilarChat = setInterval(titilarChat,tiempo);
+                 //alert("intervalo: "+intervaloTitilarChat);
              }
              tamanio = newTamanio;
              //alert("Despues del If = tamanio: "+tamanio+" - NewTamanio: "+newTamanio);
@@ -164,17 +165,20 @@
         //cuando hacen click en el chat se pone el color azul base de siempre
         $("#caja").click(function(){
             clearInterval(intervaloTitilarChat);
+            intervaloTitilarChat = 0;
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
             
         });
         $("#chatContenido").click(function(){
             clearInterval(intervaloTitilarChat);
+            intervaloTitilarChat = 0;
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
         });
         $("#chatbox").click(function(){
             clearInterval(intervaloTitilarChat);
+            intervaloTitilarChat = 0;
             $("#caja").css("border","3px solid #019DEB");
             $("#chatMenu").css("background-color","#019DEB");
         });

@@ -17,7 +17,8 @@ and open the template in the editor.
     position: fixed;	
     bottom: 0px;
     width: 25%;
-    float: right;
+    //float: right;
+    right: 0;
     background: white;//#ACD8F0;
     z-index: 9999;
     border-radius: 8px;
