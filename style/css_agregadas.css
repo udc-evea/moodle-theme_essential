@@ -243,6 +243,10 @@
     width: 220px;
     height: 210px;
 }
+#frmContacto div input{
+    width: 210px;
+    alignment-adjust: central;
+}
 #btnEnviar{
     float: right;
     font-size: 14px;
