@@ -1,5 +1,5 @@
 <?php
-/*if(isset($_POST['email'])) {
+//if(isset($_POST['email'])) {
 
 // Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
 $email_to = "nicof05@gmail.com";
@@ -11,7 +11,7 @@ if(!isset($_POST['first_name']) || !isset($_POST['last_name']) ||  !isset($_POST
 
     echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
     echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-    die();
+   
 
 }else{
 
@@ -30,8 +30,10 @@ if(!isset($_POST['first_name']) || !isset($_POST['last_name']) ||  !isset($_POST
     \mail($email_to, $email_subject, $email_message, $headers);
 
     echo "¡El formulario se ha enviado con éxito!";
-}*/
+}
 
+
+/*
 $para      = 'nicof05@gmail.com';
 $titulo    = 'El título';
 $mensaje   = 'Hola';
@@ -40,7 +42,5 @@ $cabeceras = 'From: nicof05@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 mail($para, $titulo, utf8_decode($mensaje), $cabeceras);
+*/
 
-
-
-?>

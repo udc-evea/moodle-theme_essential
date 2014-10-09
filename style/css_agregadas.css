@@ -239,8 +239,9 @@
     min-width: 230px;
     min-height: 170px;
 }
-#formNoUser{
-    //border: 1px solid blueviolet;
+#frmContacto{
+    width: 220px;
+    height: 210px;
 }
 #btnEnviar{
     float: right;
@@ -250,5 +251,5 @@
     /*background-color: #019DEB;*/
     color: white;
     border: 1px solid white;
-    margin-right: 6px;
+    /*margin-right: 6px;*/
 }
