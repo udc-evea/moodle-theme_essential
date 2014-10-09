@@ -120,7 +120,22 @@ echo $OUTPUT->doctype() ?>
         <?php //var_dump($USER);?>
         <!-- Inicio del boton derecho de FEEDBACK -->
         <?php //if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
-        <?php //require_once(dirname(__FILE__).'/includes/feedback.php'); ?>
+        <?php require_once(dirname(__FILE__).'/includes/feedback.php'); ?>
+        <?php /*
+            $para      = 'nicof05@gmail.com';
+            $titulo    = 'El título';
+            $mensaje   = 'Hola como les esta yendo?';
+            $cabeceras = 'From: nicof.05@gmail.com' . "\r\n" .
+                'Reply-To: nicof0.5@gmail.com' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+            if(mail($para, $titulo, utf8_decode($mensaje), $cabeceras)):
+                echo "<br><br><br><br><br><br><br><hr>Si se envio!<br><br>";
+                ?>
+                <script>alert("Se envio el mail")</script>
+            <?php else:
+                echo "<br><br><br><br><br><br><br><hr>NO se envio!<br><br>";?>
+                <script>alert("NOOO Se envio el mail")</script>
+            <?php endif;*/?>
         <?php //endif;?>
         <!-- Fin del boton derecho de FEEDBACK -->
         

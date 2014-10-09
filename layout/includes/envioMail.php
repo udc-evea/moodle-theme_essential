@@ -35,11 +35,12 @@ if(!isset($_POST['first_name']) || !isset($_POST['last_name']) ||  !isset($_POST
 $para      = 'nicof05@gmail.com';
 $titulo    = 'El título';
 $mensaje   = 'Hola';
-$cabeceras = 'From: webmaster@example.com' . "\r\n" .
-    'Reply-To: webmaster@example.com' . "\r\n" .
+$cabeceras = 'From: nicof05@gmail.com' . "\r\n" .
+    'Reply-To: nicof05@gmail.com' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
-mail($para, $titulo, $mensaje, $cabeceras);
+mail($para, $titulo, utf8_decode($mensaje), $cabeceras);
+
 
 
 ?>
