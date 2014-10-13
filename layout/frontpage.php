@@ -120,8 +120,13 @@ echo $OUTPUT->doctype() ?>
         <?php //var_dump($USER);?>
         <!-- Inicio del boton derecho de FEEDBACK -->
         <?php //if(!(isloggedin()) || isguestuser()):?> <!-- si no esta logueado o si es el "invitado" lo muestro -->
-        <?php require_once(dirname(__FILE__).'/includes/feedback.php'); ?>
-        <?php /*
+        <?php require_once(dirname(__FILE__).'/includes/feedback.php'); ?>        
+        <?php //echo "<br><br><br><br><br>";?>
+        <?php //echo dirname(__FILE__).'/class.phpmailer.php'." / "; ?> 
+        <?php //echo $CFG->wwwroot.'/theme/essential/layout/includes/class.phpmailer.php'; ?>
+        <?php 
+            //echo "<br><br><br>".$CFG->wwwroot.'/lib/phpmailer/class.phpmailer.php'."<br><br><br>";
+        /*
             $para      = 'nicof05@gmail.com';
             $titulo    = 'El título';
             $mensaje   = 'Hola como les esta yendo?';

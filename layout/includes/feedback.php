@@ -1,60 +1,30 @@
+<!php @import url(http://fonts.googleapis.com/css?family=Lobster); ?>
+
 <div id="divFeedback">
     <div id="divFeedCabecera">
-        <h4>Feedback</h4>
+        <h4>Contáctenos</h4>
     </div>
     <div id="divFeedCuerpo">
       <!-- Si es usuario INVITADO, o no es USUARIO muestro el form completo -->
       <?php if(isguestuser() or ($USER->id == 0)):?>
-        <form id="frmContacto" name="frmContacto" method="post" action="<?php dirname(__FILE__).'/includes/envioMail.php'?>">
-            <div><input name="first_name" type="text" id="first_name" size="40" placeholder="Nombre" /></div>
-            <div><input name="last_name" type="text" id="last_name" size="40" placeholder="Apellido" /></div>
-            <div><input name="email" type="text" id="email" size="40" placeholder="E-mail" /></div>
-            <div><textarea name="comments" maxlength="500" id="comments" placeholder="Comentarios"></textarea></div>
-            <div><input name="btnEnviar" id="btnEnviar" type="submit" value="Enviar"></div>
-            <!--<table id="tableFormNoUser">
-                <tr>
-                    <td>
-                        <label for="first_name">Nombre: *</label>
-                    </td>
-                    <td>
-                        <input type="text" name="first_name" maxlength="50" size="25">
-                    </td>
-                </tr>
-                <tr>
-                    <td valign="top">
-                        <label for="last_name">Apellido: *</label>
-                    </td>
-                    <td>
-                        <input type="text" name="last_name" maxlength="50" size="25">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="email">Dirección de E-mail: *</label>
-                    </td>
-                    <td>
-                        <input type="text" name="email" maxlength="80" size="35">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="comments">Comentarios: *</label>
-                    </td>
-                    <td>
-                        <textarea name="comments" maxlength="500" cols="30" rows="5"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align:right">
-                        <input type="submit" value="Enviar">
-                    </td>
-                </tr>
-            </table>-->
-        </form>
+      <form id="frmContacto" name="frmContacto" method="post" action="<?php echo $CFG->wwwroot.'/theme/essential/layout/includes/envioMail.php'?>">
+        <div><input name="first_name" type="text" id="first_name" size="40" placeholder="Nombre" /></div>
+        <div><input name="last_name" type="text" id="last_name" size="40" placeholder="Apellido" /></div>
+        <div><input name="email" type="text" id="email" size="40" placeholder="E-mail" /></div>
+        <div><textarea name="comments" maxlength="500" id="comments" placeholder="Comentarios"></textarea></div>
+        <div><input name="btnEnviar" id="btnEnviar" type="submit" value="Enviar"></div>
+        <div><input name="urlInterno" type="text" id="urlInterno" size="100" value="<?php echo $CFG->wwwroot ?>" style="visibility: hidden" /></div>
+      </form>
       <?php else: ?>
       <!-- Si es USUARIO muestro el form reducido -->
-            <h3>ES USUARIO</h3>
-            <?php echo "UserId: ".$USER->id ?>
+      <form id="frmContacto" name="frmContacto" method="post" action="<?php echo $CFG->wwwroot.'/theme/essential/layout/includes/envioMail.php'?>">
+        <div><textarea name="comments" maxlength="500" id="comments" placeholder="Comentarios" style="min-height: 170px;max-height: 170px;min-width: 180px; max-width: 180px;"></textarea></div>
+        <div><input name="btnEnviar" id="btnEnviar" type="submit" value="Enviar"></div>
+        <div><input name="first_name" type="text" id="first_name" size="40" value="<?php echo $USER->firstname ?>" style="visibility: hidden" /></div>
+        <div><input name="last_name" type="text" id="last_name" size="40" value="<?php echo $USER->lastname ?>" style="visibility: hidden" /></div>
+        <div><input name="email" type="text" id="email" size="40" value="<?php echo $USER->email ?>" style="visibility: hidden" /></div>
+        <div><input name="urlInterno" type="text" id="urlInterno" size="100" value="<?php echo $CFG->wwwroot ?>" style="visibility: hidden" /></div>
+      </form>
       <?php endif; ?>
     </div>
 </div>            
