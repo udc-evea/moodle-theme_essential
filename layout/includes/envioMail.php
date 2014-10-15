@@ -141,7 +141,7 @@ $textoRedireccion = "<h4>(la pagina se redirigira automaticamente al inicio)</h4
     </div>
 
     <script>
-        document.ready(window.setTimeout(location.href = "<?php echo $urlInterno; ?>",8000));
+        document.ready(window.setTimeout(location.href = "<?php echo $urlInterno; ?>",18000));
     </script>
     </body>
 </html>
