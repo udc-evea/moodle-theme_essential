@@ -1,20 +1,14 @@
-<?php
-
+<?php    
   // primero hay que incluir la clase phpmailer para poder instanciar
   //un objeto de la misma
-  //require($CFG->wwwroot.'/theme/essential/layout/includes/class.phpmailer.php');
   require('class.phpmailer.php');
-  require('class.smtp.php');
-  //require(dirname(__FILE__).'/class.phpmailer.php');
-  //require "includes/class.phpmailer.php";
-  //$nombre_archivo = $CFG->wwwroot.'/theme/essential/layout/includes/class.phpmailer.php';
-  //$archivo = fopen($nombre_archivo, 'r')
-  //  or exit("no se pudo abrir el archivo ($nombre_archivo)");
+  require('class.smtp.php');  
 
-
-  if((!empty($_POST['first_name'])) && (!empty($_POST['last_name'])) 
+if((!empty($_POST['first_name'])) && (!empty($_POST['last_name'])) 
      &&  (!empty($_POST['email'])) && (!empty($_POST['comments']))) {
   
+    $FaltanDatos = false; 
+     
     //instanciamos un objeto de la clase phpmailer al que llamamos 
     //por ejemplo mail
     $mail = new phpmailer();
@@ -77,29 +71,77 @@
           //echo $mail->ErrorInfo;
           $exito = $mail->Send();
           $intentos=$intentos+1;
-     } 
-  /*
-     if(!$exito)
-     {
-          echo "Problemas enviando correo electrónico a ".$valor;
-          echo "<br/>".$mail->ErrorInfo;	
      }
-     else
-     {
-          echo "Mensaje enviado correctamente";
-     }      
-  */         
+     //defino por defecto que el mail se envió correctamente
+     $mailEnviado = true;
+     //Compruebo si el mail se envió o hubo algun error
+     if(!$exito){
+          //echo "Problemas enviando correo electrónico a ".$valor;
+          //echo "<br/>".$mail->ErrorInfo;
+         $mailEnviado = false;
+         $textoH1 = "<h1><b>Se produjo un error al enviar el mail!</b></h1>";
+         $textoH3 = "<h3>Analizaremos el error e intentaremos solucionarlo
+                        lo mas pronto posible, intenta enviar los comentarios mas tarde.</h3>";
+     }else{
+         $textoH1 = "<h1><b>El mail se envio correctamente!</b></h1>";
+         $textoH3 = "<h3>Muchas gracias por tus comentarios y/o sugerencias, seran tomados en cuenta "
+                 . "para el mejoramiento del sitio, atentamente: Universidad Del Chubut.</h3>";
+     }
+}else{
+    $FaltanDatos = true;
+    $textoH1 = "<h1><b>Se produjo un error al enviar el mail!</b></h1>";
+    $textoH3 = "<h3>Falta completar uno o mas datos para que el mail se envie
+                    correctamente. Completelos y vuelva a intentar nuevamente, muchas gracias!.</h3>";
 }
 /* Redirect browser */
 $urlInterno = $_POST['urlInterno'];
-header("Location:".$urlInterno);
-/* Make sure that code below does not get executed when we redirect. */
-exit;
- 
-//PRUEBA DE ENVIO DE DATOS
-/*echo "url: ".$urlInterno."<br>";
-echo "url: ".$_POST['first_name']."<br>";
-echo "url: ".$_POST['last_name']."<br>";
-echo "url: ".$_POST['email']."<br>";
-echo "url: ".$_POST['comments']."<br>";
-*/
+//Defino los mensajes al Usuario
+$textoRedireccion = "<h4>(la pagina se redirigira automaticamente al inicio)</h4>";
+?>
+<html>
+    <head>
+        <title>Comentarios y sugerencias</title>
+        <link rel="shortcut icon" href="../../pix/favicon.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../style/essential.css" />
+        <link rel="stylesheet" type="text/css" href="../../style/mailPageStyle.css" />
+    </head>
+    <body>
+    <div id="paguinaCompleta">
+        <div id="panelCentral">
+            <div id="divLogoUdc">
+                <img src="../../pix/UdcLogo.png" alt='Logo UDC' title="Logo Universidad Del Chubut">
+            </div>            
+            <!-- Start Main Regions -->
+            <div id="mailMensajeAlUsuario">
+                <?php if($FaltanDatos):?>
+                    <?php echo $textoH1;?>
+                    <?php echo $textoH3;?>
+                    <br><br>                    
+                    <a id="linkAinicio" href="<?php echo $urlInterno; ?>">Volver al Inicio</a>                    
+                    <?php echo $textoRedireccion;?>
+                <?php else:?>
+                    <?php if($mailEnviado):?>
+                        <?php echo $textoH1;?>
+                        <?php echo $textoH3;?>
+                        <br><br>                    
+                        <a id="linkAinicio" href="<?php echo $urlInterno; ?>">Volver al Inicio</a>                    
+                        <?php echo $textoRedireccion;?>
+                    <?php else:?>
+                        <?php echo $textoH1;?>
+                        <?php echo $textoH3;?>
+                        <br><br>                    
+                        <a id="linkAinicio" href="<?php echo $urlInterno; ?>">Volver al Inicio</a>                    
+                        <?php echo $textoRedireccion;?>
+                    <?php endif;?>
+                <?php endif;?>
+            </div> 
+            <!-- End Main Regions -->
+        </div>
+    </div>
+
+    <script>
+        document.ready(window.setTimeout(location.href = "<?php echo $urlInterno; ?>",8000));
+    </script>
+    </body>
+</html>

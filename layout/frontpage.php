@@ -125,7 +125,7 @@ echo $OUTPUT->doctype() ?>
         <?php //echo dirname(__FILE__).'/class.phpmailer.php'." / "; ?> 
         <?php //echo $CFG->wwwroot.'/theme/essential/layout/includes/class.phpmailer.php'; ?>
         <?php 
-            //echo "<br><br><br>".$CFG->wwwroot.'/lib/phpmailer/class.phpmailer.php'."<br><br><br>";
+            //echo "<br><br><br>".$CFG->wwwroot.'/lib/phpmailer/class.phpmailer.php'."<br><br><br>";        
         /*
             $para      = 'nicof05@gmail.com';
             $titulo    = 'El título';
