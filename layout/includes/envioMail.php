@@ -80,12 +80,10 @@ if((!empty($_POST['first_name'])) && (!empty($_POST['last_name']))
           //echo "<br/>".$mail->ErrorInfo;
          $mailEnviado = false;
          $textoH1 = "<h1><b>Se produjo un error al enviar el mail!</b></h1>";
-         $textoH3 = "<h3>Analizaremos el error e intentaremos solucionarlo
-                        lo mas pronto posible, intenta enviar los comentarios mas tarde.</h3>";
+         $textoH3 = "<h3>Error al enviar el pedido, por favor intente mas tarde!.</h3>";
      }else{
          $textoH1 = "<h1><b>El mail se envio correctamente!</b></h1>";
-         $textoH3 = "<h3>Muchas gracias por tus comentarios y/o sugerencias, seran tomados en cuenta "
-                 . "para el mejoramiento del sitio, atentamente: Universidad Del Chubut.</h3>";
+         $textoH3 = "<h3>Gracias por contactarse con nosotros, procesaremos su pedido, de ser necesario nos comunicaremos con Ud.</h3>";
      }
 }else{
     $FaltanDatos = true;
@@ -101,6 +99,7 @@ $textoRedireccion = "<h4>(la pagina se redirigira automaticamente al inicio)</h4
 <html>
     <head>
         <title>Comentarios y sugerencias</title>
+	<meta http-equiv="refresh" content="10; url=<?php echo $urlInterno; ?>" />
         <link rel="shortcut icon" href="../../pix/favicon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../style/essential.css" />
@@ -141,7 +140,7 @@ $textoRedireccion = "<h4>(la pagina se redirigira automaticamente al inicio)</h4
     </div>
 
     <script>
-        document.ready(window.setTimeout(location.href = "<?php echo $urlInterno; ?>",18000));
+        //document.ready(window.setTimeout(location.href = "<?php //echo $urlInterno; ?>",180000));
     </script>
     </body>
 </html>
