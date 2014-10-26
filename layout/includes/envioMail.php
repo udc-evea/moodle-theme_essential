@@ -4,8 +4,8 @@
   require('class.phpmailer.php');
   require('class.smtp.php');  
 
-if((!empty($_POST['first_name'])) && (!empty($_POST['last_name'])) 
-     &&  (!empty($_POST['email'])) && (!empty($_POST['comments']))) {
+if((!empty($_POST['first_name'])) && (!empty($_POST['modificaciones'])) 
+     &&  (!empty($_POST['email']))) {
   
     $FaltanDatos = false; 
      
@@ -40,7 +40,7 @@ if((!empty($_POST['first_name'])) && (!empty($_POST['last_name']))
     //Indicamos cual es nuestra dirección de correo y el nombre que 
     //queremos que vea el usuario que lee nuestro correo
     $mail->From = $_POST['email'];
-    $mail->FromName = $_POST['last_name'].", ".$_POST['first_name'];
+    $mail->FromName = $_POST['first_name'];
 
     //el valor por defecto 10 de Timeout es un poco escaso dado que voy a usar 
     //una cuenta gratuita, por tanto lo pongo a 30  
@@ -52,11 +52,14 @@ if((!empty($_POST['first_name'])) && (!empty($_POST['last_name']))
     //Asignamos asunto y cuerpo del mensaje
     //El cuerpo del mensaje lo ponemos en formato html, haciendo 
     //que se vea en negrita
-    $mail->Subject = "Comentario de ".$_POST['last_name'].", ".$_POST['first_name']." (".$_POST['email'].")"." en Moodle UDC (Feedback)";
-    $mail->Body = "<b>Comentarios:</b> ".$_POST['comments'].".<br><b>Enviado por: </b>".$_POST['last_name'].", ".$_POST['first_name']." (".$_POST['email'].").";
+    $mail->Subject = "Comentario de ".$_POST['first_name']." (".$_POST['email'].")"." en Moodle UDC (Feedback)";
+    $mail->Body = "<b>¿Que modificaciones harias?: </b> ".$_POST['modificaciones'].".<br>".
+            "<b>¿Como las harias?: </b> ".$_POST['comoModificar'].".<br>"
+            . "<b>Enviado por: </b>".$_POST['first_name']." (".$_POST['email'].").";
 
     //Definimos AltBody por si el destinatario del correo no admite email con formato html 
-    $mail->AltBody = "Comentarios: ".$_POST['comments'].". Enviado por: ".$_POST['last_name'].", ".$_POST['first_name']." (".$_POST['email'].").";
+    $mail->AltBody = "¿Que modificaciones harias?: ".$_POST['modificaciones']."."
+            . "¿Como las harias?: ".$_POST['comoModificar'].". Enviado por: ".$_POST['first_name']." (".$_POST['email'].").";
 
     //se envia el mensaje, si no ha habido problemas 
     //la variable $exito tendra el valor true
