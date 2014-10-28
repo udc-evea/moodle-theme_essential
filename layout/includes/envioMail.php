@@ -83,10 +83,12 @@ if((!empty($_POST['first_name'])) && (!empty($_POST['modificaciones']))
           //echo "<br/>".$mail->ErrorInfo;
          $mailEnviado = false;
          $textoH1 = "<h1><b>Se produjo un error al enviar el mail!</b></h1>";
-         $textoH3 = "<h3>Error al enviar el pedido, por favor intente mas tarde!.</h3>";
+         $textoH3 = "<h3>Error al enviar tus sugerencias, por favor intenta nuevamente mas tarde!.</h3>";
      }else{
          $textoH1 = "<h1><b>El mail se envio correctamente!</b></h1>";
-         $textoH3 = "<h3>Gracias por contactarse con nosotros, procesaremos su pedido, de ser necesario nos comunicaremos con Ud.</h3>";
+         //$textoH3 = "<h3>Gracias por contactarse con nosotros, procesaremos su pedido, de ser necesario nos comunicaremos con Ud.</h3>";
+         $textoH3 = "<h3>Es muy importante para la Universidad y su Centro de Formacion Bimodal<br> esta informacion que nos aporta.<br><br>
+                     Trabajaremos en su implementacion,<br> muchas gracias.</h3>";
      }
 }else{
     $FaltanDatos = true;
